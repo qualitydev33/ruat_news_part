@@ -1,0 +1,58 @@
+
+.toggle-switch label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.toggle-switch span:last-child {
+    position: relative;
+    width: 35px;
+    height: 17px;
+    border-radius: 15px;
+    background: #BCC3CF;
+    transition: all 0.3s;   
+    cursor: pointer;
+}
+
+.toggle-switch span:last-child::before,
+.toggle-switch span:last-child::after {
+    content: "";
+    position: absolute;
+}
+.toggle-switch span:last-child::before {
+    left: 1px;
+    top: 1px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.toggle-switch span:last-child::after {
+    top: 50%;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/uncheck-switch.svg); */
+    background-size: 12px 12px;
+}
+
+.toggle-switch [type="checkbox"]:checked + label span:last-child {
+    background: #1564C0;
+}
+
+.toggle-switch [type="checkbox"]:checked + label span:last-child::before {
+    transform: translateX(18px);
+}
+
+.toggle-switch [type="checkbox"]:checked + label span:last-child::after {
+    width: 14px;
+    height: 14px;
+    /*right: auto;*/
+    left: 8px;
+    /* background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/checkmark-switch.svg); */
+    background-size: 14px 14px;
+}
